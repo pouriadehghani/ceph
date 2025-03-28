@@ -75,6 +75,8 @@ if [[ ${NO_PUSH} != "true" ]] ; then
 fi
 if [[ ${CI_CONTAINER} != "true" ]] ; then : "${VERSION:?}"; fi
 
+env | sort
+
 # check for valid repo auth (if pushing)
 repopath=${CONTAINER_REPO_HOSTNAME}/${CONTAINER_REPO_ORGANIZATION}/${CONTAINER_REPO}
 MINIMAL_IMAGE=${repopath}:minimal-test
